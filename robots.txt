@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buzzershowdown-dev.github.io/Buzzer-Showdown-Welcome-Screen/sitemap.xml
