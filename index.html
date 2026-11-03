@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#080713">
   <title>Buzzer Showdown</title>
   <link rel="icon" type="image/jpeg" href="./Glossy%20Quiz%20Show%20Buzzer%20Icon.jpg?v=2">
+
   <style>
     :root {
       --gold: #F8C746;
@@ -16,7 +17,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -28,7 +28,7 @@
 
     a { text-decoration: none; }
 
-    .topbar, .hero, .how, .footer {
+    .topbar, .hero, .how, .downloads, .footer {
       width: min(100% - 40px, 1080px);
       margin: auto;
     }
@@ -38,6 +38,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 25px 0;
+      gap: 20px;
     }
 
     .brand {
@@ -46,7 +47,15 @@
       letter-spacing: 3px;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
     .top-link { color: var(--muted); }
+
+    .top-link:hover { color: var(--gold); }
 
     .hero {
       display: grid;
@@ -95,9 +104,12 @@
       font-weight: 900;
       text-transform: uppercase;
       transition: .2s;
+      text-align: center;
     }
 
-    .button:hover { transform: translateY(-3px); }
+    .button:hover {
+      transform: translateY(-3px);
+    }
 
     .primary {
       background: var(--gold);
@@ -235,6 +247,114 @@
       color: var(--gold);
     }
 
+    /* DOWNLOADS SECTION */
+
+    .downloads-wrap {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #11101D, var(--dark));
+    }
+
+    .downloads {
+      padding: 85px 0;
+      text-align: center;
+    }
+
+    .downloads h2 {
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+      text-align: left;
+    }
+
+    .download-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      transition: .2s;
+    }
+
+    .download-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .platform-icon {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .download-card h3 {
+      font-size: 23px;
+      margin: 0 0 10px;
+    }
+
+    .download-card p {
+      min-height: 42px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .platform-status {
+      display: inline-block;
+      margin: 8px 0 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .download-button {
+      display: block;
+      padding: 14px;
+      border-radius: 11px;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 900;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .download-button:hover {
+      background: #FFE28A;
+      transform: translateY(-2px);
+    }
+
+    .download-button.disabled {
+      background: #323047;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .download-note {
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .old-website {
+      display: inline-block;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: .2s;
+    }
+
+    .old-website:hover {
+      color: var(--gold);
+    }
+
     .footer {
       display: flex;
       justify-content: space-between;
@@ -245,42 +365,79 @@
     }
 
     @media (max-width: 760px) {
-      .hero { grid-template-columns: 1fr; padding: 60px 0; }
-      .steps { grid-template-columns: 1fr; }
-      .bottom-cta { align-items: flex-start; flex-direction: column; }
-      .bottom-cta .button { width: 100%; text-align: center; }
-      .footer { flex-direction: column; }
+      .topbar {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 0;
+      }
+
+      .steps, .download-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-cta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .bottom-cta .button {
+        width: 100%;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header class="topbar">
     <a class="brand" href="#home">BUZZER SHOWDOWN</a>
-    <a class="top-link" href="#how-it-works">HOW TO PLAY</a>
+
+    <nav class="nav-links">
+      <a class="top-link" href="#how-it-works">HOW TO PLAY</a>
+      <a class="top-link" href="#downloads">DOWNLOADS ↓</a>
+    </nav>
   </header>
 
   <main>
+
     <section class="hero" id="home">
       <div>
         <p class="eyebrow">Your game night starts here</p>
         <h1>Ready to<br>make some<br>noise?</h1>
+
         <p class="hero-copy">
           Bring everyone together, pick a game and get ready to buzz in.
           Buzzer Showdown turns game night into your very own quiz show.
         </p>
+
         <div class="actions">
           <a class="button primary" href="https://buzzer-showdown.lovable.app/">
             Enter the show →
           </a>
+
           <a class="button" href="#how-it-works">How it works</a>
         </div>
       </div>
 
       <aside class="show-card">
         <span class="live">● THE SHOW IS YOURS</span>
+
         <div class="buzzer-stage">
           <div class="buzzer">BUZZ!</div>
         </div>
+
         <div>
           <p class="card-title">Think fast. Buzz first.</p>
           <p class="card-subtitle">One room. Your people. Let the games begin.</p>
@@ -292,6 +449,7 @@
       <section class="how">
         <p class="section-kicker">The rules are easy</p>
         <h2>Three steps to game night</h2>
+
         <p class="section-copy">
           No complicated setup. Get your room ready and bring your players in.
         </p>
@@ -321,17 +479,84 @@
             <h3>Your podium is waiting.</h3>
             <p>Ready to see who has the quickest buzz?</p>
           </div>
+
           <a class="button" href="https://buzzer-showdown.lovable.app/">
             Let's play →
           </a>
         </div>
       </section>
     </div>
+
+    <!-- DOWNLOADS HUB -->
+
+    <div class="downloads-wrap" id="downloads">
+      <section class="downloads">
+
+        <p class="section-kicker">Get the latest version</p>
+        <h2>Download Buzzer Showdown</h2>
+
+        <p class="section-copy">
+          Choose your device and get the latest version of Buzzer Showdown.
+        </p>
+
+        <div class="download-grid">
+
+          <article class="download-card">
+            <div class="platform-icon">🖥️</div>
+            <h3>Windows</h3>
+            <p>Get the Buzzer Showdown Host application for Windows.</p>
+            <span class="platform-status">Windows Host</span>
+
+            <a class="download-button"
+               href="WINDOWS_RELEASE_URL_HERE">
+              Download for Windows →
+            </a>
+          </article>
+
+          <article class="download-card">
+            <div class="platform-icon">🍎</div>
+            <h3>macOS</h3>
+            <p>Get Buzzer Showdown for your Mac.</p>
+            <span class="platform-status">Mac application</span>
+
+            <a class="download-button disabled"
+               aria-disabled="true">
+              Coming soon
+            </a>
+          </article>
+
+          <article class="download-card">
+            <div class="platform-icon">📱</div>
+            <h3>Android</h3>
+            <p>Get the Android version of Buzzer Showdown.</p>
+            <span class="platform-status">Android application</span>
+
+            <a class="download-button disabled"
+               aria-disabled="true">
+              Coming soon
+            </a>
+          </article>
+
+        </div>
+
+        <p class="download-note">
+          Always download Buzzer Showdown from our official release pages.
+          More platforms are coming soon.
+        </p>
+
+        <a class="old-website" href="OLD_WEBSITE_URL_HERE">
+          Old Website
+        </a>
+
+      </section>
+    </div>
+
   </main>
 
   <footer class="footer">
     <span>© Buzzer Showdown</span>
     <span>LET THE GAMES BEGIN.</span>
   </footer>
+
 </body>
 </html>
