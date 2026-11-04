@@ -35,5 +35,3 @@ Buzzer Showdown is licensed under the MIT License.
 You are free to use, copy, modify and distribute the software, subject to the conditions of the MIT License.
 
 See the LICENSE file for the full licence info.
-
-License: MIT
