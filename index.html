@@ -245,8 +245,6 @@
       color: var(--gold);
     }
 
-    /* DOWNLOADS SECTION */
-
     .downloads-wrap {
       border-bottom: 1px solid var(--line);
       background: linear-gradient(180deg, #11101D, var(--dark));
@@ -360,6 +358,14 @@
       font-size: 12px;
     }
 
+    .footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer a:hover { color: var(--gold); }
+
     @media (max-width: 760px) {
       .topbar { flex-wrap: wrap; }
 
@@ -397,6 +403,7 @@
     <nav class="nav-links">
       <a class="top-link" href="#how-it-works">HOW TO PLAY</a>
       <a class="top-link" href="#downloads">DOWNLOADS ↓</a>
+      <a class="top-link" href="./privacy.html">PRIVACY POLICY</a>
     </nav>
   </header>
 
@@ -477,8 +484,6 @@
       </section>
     </div>
 
-    <!-- DOWNLOADS HUB -->
-
     <div class="downloads-wrap" id="downloads">
       <section class="downloads">
 
@@ -521,7 +526,6 @@
             <p>Get the Android version of Buzzer Showdown.</p>
             <span class="platform-status">Android application</span>
 
-            <!-- Replace this URL with your APK download link when it's ready. -->
             <a class="download-button"
                href="https://github.com/BuzzerShowdown-Dev/Buzzer-Showdown-Welcome-Screen/releases/download/Android_Releases/AndroidCompanionShowdown.apk">
               Download for Android →
@@ -534,7 +538,6 @@
             <p>Get Buzzer Showdown for iPhone and iPad.</p>
             <span class="platform-status">iOS application</span>
 
-            <!-- Replace this URL with your iOS App Store or TestFlight link when it's ready. -->
             <a class="download-button"
                href="https://github.com/BuzzerShowdown-Dev/Buzzer-Showdown-Welcome-Screen/releases/download/iOS_Releases/Buzzer-Companion-unsigned.ipa">
               Download for iOS →
@@ -559,7 +562,11 @@
 
   <footer class="footer">
     <span>© Buzzer Showdown · MIT License</span>
-    <span>LET THE GAMES BEGIN.</span>
+    <span>
+      <a href="./privacy.html">Privacy Policy</a>
+      &nbsp; · &nbsp;
+      LET THE GAMES BEGIN.
+    </span>
   </footer>
 
 </body>
